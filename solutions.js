@@ -51,3 +51,12 @@ function minAge(people) {
 }
 
 console.log(minAge(people));
+
+// 4.
+function longestName(people) {
+	return people.reduce((currentLongestName, person) => {
+		return person.name.length > currentLongestName.length ? person.name : currentLongestName;
+	}, '')
+}
+
+console.log(longestName(people));
