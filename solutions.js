@@ -7,6 +7,23 @@
  * immediately invoked function expression (iife), you should _not_ do that
  * here. If you do, the automated tests will not be able to see your functions.
  */
+const people = [ {
+	name: "Bob",
+	age: 42
+}, {
+	name: "Sue",
+	age: 27
+}, {
+	name: "Lou",
+	age: 33
+}, {
+	name: "Zanzibar",
+	age: 18
+}, {
+	name: "Gladys",
+	age: 39
+}
+];
 
 // 1.
 const isBoolean = testCase => typeof testCase === 'boolean';
@@ -25,3 +42,12 @@ console.log([hasBoolean([1, 2, 3, 4, 5]), hasBoolean([3, 'true', 3, {
 	bool: true,
 	num: 2
 }]), hasBoolean([true, 1, 'blue', undefined])]);
+
+// 3.
+function minAge(people) {
+	return people.reduce((currentLowestAge, person) => {
+		return person.age < currentLowestAge ? person.age : currentLowestAge;
+	}, Number.POSITIVE_INFINITY);
+}
+
+console.log(minAge(people));
