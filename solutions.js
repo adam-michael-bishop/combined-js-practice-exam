@@ -19,3 +19,9 @@ isBoolean('true'),
 isBoolean(1));
 
 // 2.
+const hasBoolean = array => array.filter(element => typeof element === 'boolean').length > 0;
+
+console.log([hasBoolean([1, 2, 3, 4, 5]), hasBoolean([3, 'true', 3, {
+	bool: true,
+	num: 2
+}]), hasBoolean([true, 1, 'blue', undefined])]);
