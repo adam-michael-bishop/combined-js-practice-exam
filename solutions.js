@@ -60,3 +60,14 @@ function longestName(people) {
 }
 
 console.log(longestName(people));
+
+// 5.
+function createPerson(name, age) {
+	return {
+		name: name,
+		age: age
+	}
+}
+
+console.log(createPerson('Bob', 42));
+
