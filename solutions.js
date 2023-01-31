@@ -71,3 +71,11 @@ function createPerson(name, age) {
 
 console.log(createPerson('Bob', 42));
 
+$('#bold-btn').click(event => $(event.currentTarget).css("font-weight", "bold"));
+$('#reload-btn').click(() => window.location.reload());
+$('.loud-item').click((event) => alert($(event.currentTarget).text()));
+$('.data-item').hover(
+	(event) => $('#data-display').html($(event.currentTarget).attr("data-id")),
+	() => $('#data-display').html('')
+);
+$('#change-text-btn').click((event) => $(event.currentTarget).text($('#change-text-input').val()));
